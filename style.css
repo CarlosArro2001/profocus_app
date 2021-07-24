@@ -3,3 +3,34 @@ html{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+#header{
+    position:fixed;
+    top:0;
+    font-family:'Pacifico',cursive;
+    color: rgba(255, 255, 255, 0.39);
+}
+
+#title-section{
+    font-family: 'Pacifico',cursive;
+    color:white;
+    text-align: center;   
+    font-style: normal;
+    font-weight: normal;
+    top: 198px;
+    font-size: 30px;
+    line-height: 53px;
+    /* identical to box height */
+}
+
+
+
+#footer{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.38);
+}
