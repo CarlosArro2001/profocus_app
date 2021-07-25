@@ -1,3 +1,18 @@
+/* 
+Author : Carlos Raniel Ariate Arro 
+
+Last Update Date & Time : Sunday,July 25 2021  7:39pm
+
+Notes : 
+
+The fonts are from the Google Font API that is located in
+the index.html file.
+
+Need to use media query for the background-image as the 
+image shrinks in height ,and outputs a white screen at the 
+lower half of the screen when the window gets resized
+*/
+
 html{
     background-image: url("backgrounds/background_1.jpg");
     background-size: cover;
@@ -22,8 +37,47 @@ html{
     line-height: 53px;
     /* identical to box height */
 }
+#Timer-section{
+    padding-top: 20px;
+    padding-left: 40.5%;
+}
+.timer-outer{
+    background-color: #FCFCFC;
+    text-align:center;
+    width:20em;
+    height:20em;
+    border-radius:10rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
+.timer-inner{
+    background-color: #FFB6D5;
+    text-align:center;
+    width:18.5em;
+    height:18.5em;
+    border-radius:15rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer-text{
+    background-color: #FCFCFC;
+    text-align:center;
+    width:16.5em;
+    height:16.5em;
+    border-radius:15rem;
+    display:flex;
+    justify-content: center;
+}
+
+.timer-text h4{
+    padding: 35% 0 40% 0;
+    font-family: 'Lato', sans-serif;
+
+}
 
 #footer{
     font-family: Lato;
@@ -34,3 +88,4 @@ html{
     width: 100%;
     color: rgba(255, 255, 255, 0.38);
 }
+
