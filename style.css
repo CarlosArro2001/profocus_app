@@ -1,22 +1,20 @@
 /* 
 Author : Carlos Raniel Ariate Arro 
 
-Last Update Date & Time : Sunday,July 25 2021  7:39pm
+Last Update Date & Time : Tuesday,July 27 2021  7:40pm
 
 Notes : 
 
 The fonts are from the Google Font API that is located in
-the index.html file.
+the index.html file. 
 
 Need to use media query for the background-image as the 
 image shrinks in height ,and outputs a white screen at the 
-lower half of the screen when the window gets resized
+lower half of the screen when the window gets resized - fixed 
 */
 
 html{
-    background-image: url("backgrounds/background_1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: url("backgrounds/background_1.jpg") no-repeat center fixed ;
 }
 
 #header{
@@ -28,17 +26,20 @@ html{
 
 #title-section{
     font-family: 'Pacifico',cursive;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
     color:white;
     text-align: center;   
     font-style: normal;
     font-weight: normal;
-    
     font-size: 30px;
     line-height: 53px;
+    padding-top: 50px;
     /* identical to box height */
 }
 #Timer-section{
-    padding-left: 38%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .timer-outer{
     background-color: #FCFCFC;
@@ -78,6 +79,28 @@ html{
     font-family: 'Lato', sans-serif;
     font-size: 40px;
 }
+
+.btn{
+    background: white;
+    border-radius: 15rem;
+    padding: 1rem;
+    border:2px solid white;
+    transition: 0.4s ease;
+}
+.timer-buttons{
+    padding-top: 30px;
+    text-align: center;    
+}
+
+.btn:hover{
+    background-color:#232323;
+    color:#FF3257;
+}
+
+.fa-clock{
+    color:#FF3257;
+}
+
 
 #footer{
     font-family: Lato;
