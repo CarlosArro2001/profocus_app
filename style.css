@@ -1,7 +1,7 @@
 /* 
 Author : Carlos Raniel Ariate Arro 
 
-Last Update Date & Time : Tuesday,July 27 2021  7:40pm
+Last Update Date & Time : Wedbesday,July 28 2021  7:20pm
 
 Notes : 
 
@@ -13,8 +13,10 @@ image shrinks in height ,and outputs a white screen at the
 lower half of the screen when the window gets resized - fixed 
 */
 
-html{
-    background: url("backgrounds/background_1.jpg") no-repeat center fixed ;
+html,body{
+    background: url("backgrounds/background_1.jpg") no-repeat center fixed;
+    width:100%;
+    overflow-x:hidden; 
 }
 
 #header{

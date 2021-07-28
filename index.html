@@ -3,13 +3,17 @@
         <head>
             <title>ProFocus</title>
             <link rel="stylesheet"  type="text/css" href="style.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- Google font API-->
             <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
             <!-- font-awesome API-->
             <script src="https://kit.fontawesome.com/996973c893.js"></script>
+            <!-- My JS-->
+            <script src="script.js">      
+            </script>
             <title>FocusPod</title>
         </head>
-        <body>
+        <body onload="template()">
             <header id="header">
                 <p>FocusPod</p>
             </header>
@@ -25,11 +29,9 @@
                         <div class="timer-inner">
                             <!-- Where the timer text will be displayed-->
                             <div class="timer-text">
-                                <h4>00</h4>
+                                <h4 id="minutes"></h4>
                                 <h4>:</h4>
-                                <h4>00</h4>
-                                <h4>:</h4>
-                                <h4>00</h4>
+                                <h4 id="seconds"></h4>
                             </div>
                         </div>
                     </div>
@@ -37,7 +39,7 @@
                 <!-- The buttons section music- clock - settings -->
                 <div class="timer-buttons">
                     <button class="btn"><i class="fas fa-music fa-2x"></i></button>
-                    <button class="btn"><i class="far fa-clock fa-2x"></i></button>
+                    <button class="btn" id="start" onclick="start()"><i class="far fa-clock fa-2x"></i></button>
                     <button class="btn"><i class="fas fa-cog fa-2x"></i></button>
                 </div>
                 <div id="TaskList-section">
