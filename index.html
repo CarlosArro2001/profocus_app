@@ -18,10 +18,13 @@
                 <p>FocusPod</p>
             </header>
             <section id="main-body">
-                <div id="title-section">
-                    <p>Welcome back, Lem!</p>
+                <div id="left-section">
                 </div>
                 <!-- Timer section consisting 3 sections  -->
+                <div class="middle-section">
+                    <div id="title-section">
+                        <p>Welcome back, Lem!</p>
+                    </div>
                 <div id="Timer-section">
                     <!-- The white section-->
                     <div class="timer-outer">
@@ -37,13 +40,21 @@
                     </div>
                 </div>
                 <!-- The buttons section music- clock - settings -->
-                <div class="timer-buttons">
-                    <button class="btn"><i class="fas fa-music fa-2x"></i></button>
-                    <button class="btn" id="start" onclick="start()"><i class="far fa-clock fa-2x"></i></button>
-                    <button class="btn"><i class="fas fa-cog fa-2x"></i></button>
-                </div>
+                    <div class="timer-buttons">
+                        <button class="btn"><i class="fas fa-music fa-2x"></i></button>
+                        <button class="btn" id="start" onclick="start()"><i class="far fa-clock fa-2x"></i></button>
+                        <button class="btn"><i class="fas fa-cog fa-2x"></i></button>
+                    </div>
+            </div>
                 <div id="TaskList-section">
-
+                    <h2>Task List</h2>
+                    <button id="minTaskList" onclick="openTaskList()"><i class="fas fa-chevron-right"></i></button>
+                    <button id="btnTask" onclick="openForm()"><i class="fas fa-plus fa-2x"></i></button>
+                    <form class="form-popup" id="TaskForm">
+                        <h4> Add a new task</h4>
+                        <input type="text" placeholder="Wash dishes" required>
+                        <button onclick="closeForm()">Close</button>
+                    </form>
                 </div>
             </section>
             <!-- Footer section that contains the copyright-->

@@ -1,3 +1,6 @@
+/*
+
+*/
 var min = 25;
 var sec = "00";
 
@@ -5,7 +8,6 @@ function template(){
     document.getElementById("minutes").innerHTML = min;
     document.getElementById("seconds").innerHTML = sec;
 }
-
 function start(){
     min = 24;
     sec = 59;
@@ -30,5 +32,11 @@ function start(){
             sec = 60;
         }
     }
+}
 
+function openForm(){
+    document.getElementById("TaskForm").style.display="block";
+}
+function closeForm(){
+    document.getElementById("TaskForm").style.display="none";
 }
