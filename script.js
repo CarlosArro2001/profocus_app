@@ -34,9 +34,30 @@ function start(){
     }
 }
 
-function openForm(){
-    document.getElementById("TaskForm").style.display="block";
+
+function AddTask(){
+    console.log(input);
+    var li = document.createElement('li');
+    li.className = 'li';
+    var box = document.createElement('box');
+    var input = document.querySelector('#TaskInput').value;
+    var text = document.createTextNode(input);
+    var remove = document.createElement('remove');
+    remove.className="remove";
+    remove.setAttribute('onclick','removeItem()');
+    var remove_txt = document.createTextNode('REMOVE');
+    li.appendChild(box);
+    li.appendChild(remove);
+    box.appendChild(text);
+    remove.appendChild(remove_txt);
+    
+    if(input ===""){
+        alert("You must write something to add!");
+    }else{
+        document.getElementById("list").appendChild(li);
+    }
+    document.getElementById("TaskInput").value="";
 }
-function closeForm(){
-    document.getElementById("TaskForm").style.display="none";
-}
+
+
+
