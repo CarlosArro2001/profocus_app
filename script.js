@@ -1,9 +1,18 @@
 /*
+    Author : Carlos Raniel Ariate Arro 
 
+    Last Update Date & Time : Thursday,July 30 2021  10:45pm
+
+    timer functions: tempalate() start()
+    task list functions : AddTask()
 */
+
+// preset values for the timer function template 
 var min = 25;
 var sec = "00";
 
+// when the page is first loaded this function will be called to immediately 
+// put the timer on 25:00
 function template(){
     document.getElementById("minutes").innerHTML = min;
     document.getElementById("seconds").innerHTML = sec;
@@ -34,7 +43,7 @@ function start(){
     }
 }
 
-
+// function will be invoked after submit button located in the Task list form clicked
 function AddTask(){
     console.log(input);
     var li = document.createElement('li');
@@ -50,13 +59,13 @@ function AddTask(){
     li.appendChild(remove);
     box.appendChild(text);
     remove.appendChild(remove_txt);
-    
+    // checking whether or not the user has entered a task or not
     if(input ===""){
         alert("You must write something to add!");
     }else{
         document.getElementById("list").appendChild(li);
     }
-    document.getElementById("TaskInput").value="";
+    document.getElementById("TaskInput").value=""; 
 }
 
 
