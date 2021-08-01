@@ -206,11 +206,67 @@ html,body{
     margin-right: 10px;
 }
 
+.box{
+    background:#FFFFFF;
+    font-family: 'Lato',sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0em;
+    padding: 5px 50px 5px 0 ;
+    border-radius: 3px;
+}
 
+#list li{
+    margin-bottom: 15px;
+}
 
+#list button{
+    padding: 0;
+    border: none;
+    background: none;
+}
 
+.fa-trash-alt{
+    color:white;
+    padding-left: 10px;
+}
 
+#list li {
+    list-style: none;
+}
 
+.check{
+    display:none;
+}
+.checkmark{
+    padding: 5px 50px 5px 0 ;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.4s;
+}
 
+.check:checked ~ .checkmark{
+    background-color: #F4F4F4;
+}
+.checkmark::after{
+    content:"";
+    position:absolute;
+    width:5px;
+    height:15px;
+    border-right: 2px solid #FF4F6F;
+    border-bottom: 2px solid #FF4F6F;
+    top:40%;
+    left:50%;
+    transform: translate(-50%, -50%) rotateZ(40deg) scale(10);
+    transition: all 0.4s;
+    opacity: 0;
+}
+.check:checked ~ .checkmark::after{
+    opacity: 1;
+    transform: translate(-50%, -50%) rotateZ(40deg) scale(1);
 
+}
 

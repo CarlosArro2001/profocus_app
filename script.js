@@ -48,17 +48,32 @@ function AddTask(){
     console.log(input);
     var li = document.createElement('li');
     li.className = 'li';
-    var box = document.createElement('box');
+    var box = document.createElement('label');
+    box.className = "box";
     var input = document.querySelector('#TaskInput').value;
-    var text = document.createTextNode(input);
-    var remove = document.createElement('remove');
-    remove.className="remove";
-    remove.setAttribute('onclick','removeItem()');
-    var remove_txt = document.createTextNode('REMOVE');
+    var text = document.createElement("label");
+    text.innerHTML = input;
+    //generating check element
+    var checkbox = document.createElement("input");
+    checkbox.type="checkbox";
+    checkbox.className="check";
+    checkbox.id="check";
+    var checkmark = document.createElement('label');
+    checkmark.htmlFor = checkbox.id;
+    checkmark.className = "checkmark";
+    //chkbutton.onclick = tickFunc();
+    //delete button
+    var btnRMV = document.createElement("span");
+    btnRMV.setAttribute("class","far fa-trash-alt fa-2x");
+    //calling the removeTask() function when the button is clicked 
+    var remove = document.createElement("button");
+    //adding the elements 
     li.appendChild(box);
     li.appendChild(remove);
+    box.appendChild(checkbox);
+    box.appendChild(checkmark);
     box.appendChild(text);
-    remove.appendChild(remove_txt);
+    remove.appendChild(btnRMV);
     // checking whether or not the user has entered a task or not
     if(input ===""){
         alert("You must write something to add!");
@@ -66,6 +81,11 @@ function AddTask(){
         document.getElementById("list").appendChild(li);
     }
     document.getElementById("TaskInput").value=""; 
+
+    function check(){
+        console.log("Registered");
+    }
+    
 }
 
 
