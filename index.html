@@ -32,6 +32,8 @@
                         <div class="timer-inner">
                             <!-- Where the timer text will be displayed-->
                             <div class="timer-text">
+                                <h4 id="hours"></h4>
+                                <h4>:</h4>
                                 <h4 id="minutes"></h4>
                                 <h4>:</h4>
                                 <h4 id="seconds"></h4>
@@ -47,26 +49,26 @@
                     </div>
             </div>
                 <!-- Divided the TaskList Section into 6 sections to allow CSS grid to be used -->
-                <div id="TaskList-section">
-                    <div class="arrow_Section"><button><i class="fas fa-chevron-right"></i></button></div>
-                    <div class="TaskList_Title"><h2>Task List</h2></div>
-                    <div class="TaskList_space1"></div>  
-                    <div class="TaskList_listContainer">
-                        <ul id="list">
-                        </ul>
-                    </div>
-                    <div class="TaskList_space2"></div>
-                    <div class="TaskList_form">
-                        <form>
-                            <input placeholder="I will eat cookies" id="TaskInput"><br>
-                            <input type="submit" value="Submit" onclick="AddTask(); return false;">
-                            <button>Close</button>
-                        </form>
-                    </div>
-                    <div class="TaskList_btn">
-                        <button> <i class="fas fa-plus fa-2x"></i></button>
-                    </div>
-                </div>
+                        <div id="TaskList_section">
+                            <div class="arrow_Section"><button><i class="fas fa-chevron-right fa-2x"></i></button></div>
+                            <div class="TaskList_Title">
+                                <h2>Task List</h2>
+                            </div>
+                            <div class="TaskList_listContainer">
+                                <ul id="list">
+                                </ul>
+                            </div>
+                            <div class="TaskList_form">
+                                <form id="form">
+                                    <input placeholder="I will eat cookies" id="TaskInput"><br>
+                                    <input type="submit" value="Submit" onclick="AddTask(); return false;">
+                                    <button onclick="hideForm();">Close</button>
+                                </form>
+                                <div class="TaskList_btn">
+                                    <button> <i class="fas fa-plus fa-2x"></i></button>
+                                </div>
+                            </div>
+                        </div>
             </section>
             <!-- Footer section that contains the copyright-->
             <footer id="footer">

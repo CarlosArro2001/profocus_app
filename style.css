@@ -19,6 +19,7 @@ html,body{
     overflow-x:hidden; 
 }
 
+
 #main-body{
     display:grid;
     grid-template-columns: auto auto auto;
@@ -42,6 +43,7 @@ html,body{
 .middle-section{
     margin-top: 5%;
     margin-bottom: 10%;
+    margin-right: 291px;
 }
 
 #title-section{
@@ -56,28 +58,28 @@ html,body{
     padding-top: 50px;
     /* identical to box height */
 }
+
 #Timer-section{
     align-items: center;
     display: flex;
     justify-content: center;
 }
+
 .timer-outer{
     background-color: #FCFCFC;
     text-align:center;
-    width:20em;
-    height:20em;
+    width:15.2em;
+    height:15.2em;
     border-radius:10rem;
     display:flex;
     justify-content: center;
     align-items: center;
 }
-
-
 .timer-inner{
     background-color: #FFB6D5;
     text-align:center;
-    width:18.5em;
-    height:18.5em;
+    width:14em;
+    height:14em;
     border-radius:15rem;
     display:flex;
     justify-content: center;
@@ -86,20 +88,18 @@ html,body{
 .timer-text{
     background-color: #FCFCFC;
     text-align:center;
-    width:16.5em;
-    height:16.5em;
+    width:12em;
+    height:12em;
     border-radius:15rem;
     display:flex;
     justify-content: center;
 }
-
 .timer-text h4{
     color:#3D3D3D;
     padding: 22% 0 23% 0;
     font-family: 'Lato', sans-serif;
-    font-size: 40px;
+    font-size: 31px;
 }
-
 .btn{
     background: white;
     border-radius: 15rem;
@@ -111,17 +111,13 @@ html,body{
     padding-top: 30px;
     text-align: center;    
 }
-
 .btn:hover{
     background-color:#232323;
     color:#FF3257;
 }
-
 .fa-clock{
     color:#FF3257;
 }
-
-
 #footer{
     font-family: Lato;
     font-style: normal;
@@ -132,19 +128,25 @@ html,body{
     color: rgba(255, 255, 255, 0.38);
 }
 
-#TaskList-section{
+#TaskList_section{
+    bottom:0px;
+    position: absolute; 
+    right:-20px;
     background: linear-gradient(180deg, rgba(255,255,255,0.3312)0%,rgba(255,255,255,0.6058)65.62%,rgba(244,244,244,0)100%);
     display: grid;
-    grid-template-columns: 50px 350px  50px;
+    grid-template-columns: 50px auto ;
     grid-template-rows: 100px;
-    height: 95vh;
-    margin-left:30%;
+    height: 100%;
+    width:430px;
+    margin-left:291px !important;
 }
+
 .arrow_Section{
     display:flex;
     grid-row-start: 1;
     grid-row-end: 4;
 }
+
 .arrow_Section button{
     padding: 10px;
     border: none;
@@ -158,9 +160,10 @@ html,body{
 
 .arrow_Section button:hover{
     background-color: rgba(255,255,255,0.2);
-
 }
-
+.fa-chevron-right{
+    color: rgba(0, 0, 0, 0.62);
+}
 .TaskList_Title{
     display: table;
 }
@@ -174,19 +177,21 @@ html,body{
     line-height: 44px;
     letter-spacing: 0em;
     text-align: left;
-
+}
+.TaskList_Title p{
+    font-family: 'Lato',sans-serif !important;
+    font-size: 14px;
 }
 
 .TaskList_btn{
-    display: table;
-    
+    position: absolute;
+    right:    20;
+    bottom:   5%;
+    right:0;
+    margin-right: 5%;
 }
 
-
 .TaskList_btn button{
-    margin-right: 1%;
-    position: absolute;
-    right:    0;
     bottom:   5%;
     background: white;
     border-radius: 15rem;
@@ -205,11 +210,15 @@ html,body{
     bottom:   5%;
     margin-right: 10px;
 }
+#form{
+    display: block;
+}
+
 
 .box{
     background:#FFFFFF;
     font-family: 'Lato',sans-serif;
-    font-size: 20px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: 17px;
@@ -230,7 +239,9 @@ html,body{
 
 .fa-trash-alt{
     color:white;
-    padding-left: 10px;
+    margin-left: 10px;
+    height:16px;
+    width:16px;
 }
 
 #list li {
@@ -240,18 +251,20 @@ html,body{
 .check{
     display:none;
 }
+
 .checkmark{
-    padding: 5px 50px 5px 0 ;
+    padding: 4px 10px 4px 10px ;
     background-color: #F4F4F4;
-    border-radius: 10px;
     position: relative;
     transition: background-color 0.4s;
+    
 }
 
-.check:checked ~ .checkmark{
+.check:checked {
     background-color: #F4F4F4;
 }
-.checkmark::after{
+
+.checkmark::after  {
     content:"";
     position:absolute;
     width:5px;
@@ -264,9 +277,33 @@ html,body{
     transition: all 0.4s;
     opacity: 0;
 }
+
 .check:checked ~ .checkmark::after{
     opacity: 1;
     transform: translate(-50%, -50%) rotateZ(40deg) scale(1);
-
 }
 
+.checkmark:hover{
+    background-color: #C4C4C4;
+}
+
+/* Custom scroll bar*/ 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background-color: darkgrey;
+}
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
