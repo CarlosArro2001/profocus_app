@@ -10,6 +10,7 @@ var min = 25;
 var sec = "00";
 var hrs ="00";
 
+//executed when the website is loaded the body will call the template() function via onload event
 function template(){
     document.getElementById("hours").innerHTML = hrs;
     document.getElementById("minutes").innerHTML = min;
@@ -17,13 +18,14 @@ function template(){
 }
 
 
-
+//executed when the timer button (center) is clicked on
 function showOptions(){
     var options = document.getElementById("timer-options");
     options.style.setProperty("display","block","important");
 }
 
-
+//executed when the start button is clicked on 
+//this 
 var minutes_interval = 0;
 var seconds_interval = 0;
 function start(){
@@ -52,13 +54,14 @@ function start(){
     }
 }
 
+// executed when the clear button is clicked on, this clears or resets the timer. 
 function clear(){
     console.log("executed");
 }
 
 
 
-
+//jQuery functions to toggle and untoggle the task menu 
 $("#menu-toggle").click(function (e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
@@ -70,6 +73,7 @@ $("#menu-untoggle").click(function(e){
 });
 
 
+//functions for toggling and untoggling the form inthe task menu 
   function toggleForm(){
       var form = document.getElementById("form");
       form.style.setProperty("display","block","important");
@@ -128,7 +132,7 @@ $("#menu-untoggle").click(function(e){
       document.getElementById("TaskInput").value=""; 
   }
 
-
+// functions to hide and show the arrow for toggling and untoggling the task menu
 function hideArrow(){
     var btn = document.getElementById("menu-toggle");
     btn.style.setProperty("display","none","important");
