@@ -1,7 +1,7 @@
 /* 
-Author : Carlos Raniel Ariate Arro 
+    Author : Carlos Raniel Ariate Arro 
 
-Last Update Date & Time : Thursday,July 30 2021  10:45pm
+    Last Update Date & Time : Tuesday,August 10 2021  5:55pm
 
 Notes : 
 
@@ -11,59 +11,54 @@ the index.html file.
 Need to use media query for the background-image as the 
 image shrinks in height ,and outputs a white screen at the 
 lower half of the screen when the window gets resized - fixed 
+
 */
 
 html,body{
-    background: url("backgrounds/background_1.jpg") no-repeat center fixed;
-    width:100%;
-    overflow-x:hidden; 
+    margin:0;
+    height:100%;
 }
 
-
-#main-body{
-    display:grid;
-    grid-template-columns: auto auto auto;
+body{
+    background-image: url("background.jpg");
+    background-size:cover;
 }
 
-#header{
-    position:fixed;
-    top:0;
-    font-family:'Pacifico',cursive;
-    color: rgba(255, 255, 255, 0.39);
-    font-family: Pacifico;
+#FocusPod_title{
+    font-family: 'Pacifico', cursive;
+    color: rgba(255, 255, 255, 0.38);
     font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 42px;
-    letter-spacing: 0em;
-    text-align: left;
-
 }
 
-.middle-section{
-    margin-top: 5%;
-    margin-bottom: 10%;
-    margin-right: 291px;
+/* Timer section*/
+#timer_Section{
+  margin-top: 5px;
+}
+.timer{
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-#title-section{
-    font-family: 'Pacifico',cursive;
-    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
-    color:white;
-    text-align: center;   
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 53px;
-    padding-top: 50px;
-    /* identical to box height */
+#timer_title{
+  text-align: center;
+  font-family: 'Pacifico',cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 53px;
+  /* identical to box height */
+  color: #FFFFFF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#Timer-section{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
+#timer-text h4{
+  font-family: 'Lato',sans-serif !important;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 31px;
+  line-height: 37px;
+  }
 
 .timer-outer{
     background-color: #FCFCFC;
@@ -100,210 +95,339 @@ html,body{
     font-family: 'Lato', sans-serif;
     font-size: 31px;
 }
-.btn{
-    background: white;
+.timer-btn{
+    background-color: white ;
     border-radius: 15rem;
     padding: 1rem;
     transition: 0.4s ease;
     border:2px solid white;
 }
 .timer-buttons{
-    padding-top: 30px;
-    text-align: center;    
+    padding-top: 19px;
+    text-align: center; 
 }
-.btn:hover{
+.timer-button:hover{
     background-color:#232323;
     color:#FF3257;
 }
 .fa-clock{
     color:#FF3257;
 }
-#footer{
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    position:fixed;
-    bottom: 0;
-    width: 100%;
-    color: rgba(255, 255, 255, 0.38);
+
+#timer-options{
+  display:none;
+  text-align: center !important;
 }
 
-#TaskList_section{
-    bottom:0px;
-    position: absolute; 
-    right:-20px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.3312)0%,rgba(255,255,255,0.6058)65.62%,rgba(244,244,244,0)100%);
-    display: grid;
-    grid-template-columns: 50px auto ;
-    grid-template-rows: 100px;
+.optionBtn{
+  font-family: 'Lato',sans-serif !important;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 150%;
+  width:74px;
+  height:29px;
+  border: none;
+  border-radius: 8px;
+}
+#optionClear{
+  color:white;
+  font-family: 'Lato',sans-serif !important;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 150%;
+  width:74px;
+  height:29px;
+  border: none;
+  border-radius: 8px;
+  background: #1C1C1C;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#optionStart{
+  background: #C7FFC9;
+  border: 3px solid rgba(0, 152, 7, 0.42);
+  box-shadow: 0px 4px 8px #AAFFAE, 0px 8px 16px rgba(31, 139, 36, 0.14);
+  border-radius: 99px;
+  Width:112px;
+  Height: 32px;
+  font-family: 'Lato',sans-serif !important;
+  color:#007505;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 138%;
+  /* or 21px */
+  text-align: center;
+  letter-spacing: 0.0075em;
+}
+
+#optionRow2{
+  padding-top:9px;
+}
+
+
+
+/* Switch bar */
+
+#optionRow1{
+  padding-top:15px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 61px;
+  height: 32px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+  content: "\f0e7";
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.slider.round:before {
+  content: "\f0e7";
+  color:#FF9900;
+  font-family: FontAwesome;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(224, 224, 224, 0.5);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+/* Task List section  */
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    right: 250px;
+    width: 0;
     height: 100%;
-    width:430px;
-    margin-left:291px !important;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3312) 0%,
+     rgba(255, 255, 255, 0.6048) 65.62%, rgba(244, 244, 244, 0) 100%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+  @media (min-width: 768px) {
+    #wrapper {
+      padding-right: 0;
+    }
+    #wrapper.toggled {
+      padding-right: 250px;
+    }
+    #sidebar-wrapper {
+      width: 0;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+      width: 400px;
+    }
+    #page-content-wrapper {
+      padding: 20px;
+      position: relative;
+    }
+    #wrapper.toggled #page-content-wrapper {
+      position: relative;
+      margin-left: 0;
+    }
+  }
+  
+#sidebar-wrapper h5{
+  font-family: 'Pacifico',cursive;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 44px;
+/* identical to box height */
+color: #FFFFFF;
 }
 
-.arrow_Section{
-    display:flex;
-    grid-row-start: 1;
-    grid-row-end: 4;
+#Right_Section{
+    height:100%;
 }
-
-.arrow_Section button{
-    padding: 10px;
+#menu-toggle{
+    padding-top:100px;
+    padding-bottom:100px;
     border: none;
     background: none;
-    display:flex;
-    /* centering the text inside the button */
-    align-items:center;
-    justify-content:center;
-    transition: 0.4s ease-in;
-}
-
-.arrow_Section button:hover{
-    background-color: rgba(255,255,255,0.2);
-}
-.fa-chevron-right{
-    color: rgba(0, 0, 0, 0.62);
-}
-.TaskList_Title{
-    display: table;
-}
-
-.TaskList_Title h2{
-    font-family:'Pacifico',cursive;
-    color:white;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 44px;
-    letter-spacing: 0em;
-    text-align: left;
-}
-.TaskList_Title p{
-    font-family: 'Lato',sans-serif !important;
-    font-size: 14px;
-}
-
-.TaskList_btn{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3312) 0%,
+     rgba(255, 255, 255, 0.6048) 65.62%, rgba(244, 244, 244, 0) 100%);
     position: absolute;
-    right:    20;
-    bottom:   5%;
-    right:0;
-    margin-right: 5%;
+    top: 60%;
+    right: 0;
+}
+
+#form{
+  display: none;
+  position: absolute;
+  right:    20;
+  bottom:   10%;
+  margin-right: 10px;
 }
 
 .TaskList_btn button{
-    bottom:   5%;
-    background: white;
-    border-radius: 15rem;
-    padding: 1rem;
-    transition: 0.4s ease;
-    border:2px solid white;
+  position: absolute;
+  bottom:   10%;
+  right:0;
+  background: white;
+  border-radius: 15rem;
+  padding: 1rem;
+  transition: 0.4s ease;
+  border:2px solid white;
 }
 
 .TaskList_btn button:hover{
-    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.4);
 }
 
-.TaskList_form form{
-    position: absolute;
-    right:    20;
-    bottom:   5%;
-    margin-right: 10px;
-}
-#form{
-    display: block;
-}
-
-
+/* Task List  */
 .box{
-    background:#FFFFFF;
-    font-family: 'Lato',sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 17px;
-    letter-spacing: 0em;
-    padding: 5px 50px 5px 0 ;
-    border-radius: 3px;
+  background:#FFFFFF;
+  font-family: 'Lato',sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  padding: 5px 50px 5px 0;
+  border-radius: 3px;
+  min-width: 100px;
+  display: inline-block;
 }
 
 #list li{
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 #list button{
-    padding: 0;
-    border: none;
-    background: none;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 .fa-trash-alt{
-    color:white;
-    margin-left: 10px;
-    height:16px;
-    width:16px;
+  color:white;
+  margin-left: 10px;
+  height:16px;
+  width:16px;
 }
 
 #list li {
-    list-style: none;
+  list-style: none;
 }
 
 .check{
-    display:none;
+  display:none;
 }
 
 .checkmark{
-    padding: 4px 10px 4px 10px ;
-    background-color: #F4F4F4;
-    position: relative;
-    transition: background-color 0.4s;
-    
+  padding: 4px 10px 4px 10px ;
+  background-color: #F4F4F4;
+  position: relative;
+  transition: background-color 0.4s;
+  
 }
 
 .check:checked {
-    background-color: #F4F4F4;
+  background-color: black;
 }
 
 .checkmark::after  {
-    content:"";
-    position:absolute;
-    width:5px;
-    height:15px;
-    border-right: 2px solid #FF4F6F;
-    border-bottom: 2px solid #FF4F6F;
-    top:40%;
-    left:50%;
-    transform: translate(-50%, -50%) rotateZ(40deg) scale(10);
-    transition: all 0.4s;
-    opacity: 0;
+  content:"";
+  position:absolute;
+  width:5px;
+  height:15px;
+  border-right: 2px solid #FF4F6F;
+  border-bottom: 2px solid #FF4F6F;
+  top:40%;
+  left:50%;
+  transform: translate(-50%, -50%) rotateZ(40deg) scale(10);
+  transition: all 0.4s;
+  opacity: 0;
 }
 
 .check:checked ~ .checkmark::after{
-    opacity: 1;
-    transform: translate(-50%, -50%) rotateZ(40deg) scale(1);
+  opacity: 1;
+  transform: translate(-50%, -50%) rotateZ(40deg) scale(1);
 }
 
 .checkmark:hover{
-    background-color: #C4C4C4;
+  background-color: #C4C4C4;
+} 
+
+#menu-untoggle{
+  padding-top:40vh;
+  padding-bottom:50vh;
+  border: none;
+  background: none;
+  position: absolute;
+  left: 0;
+  top:0;
 }
 
-/* Custom scroll bar*/ 
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-::-webkit-scrollbar-track {
-    background-color: darkgrey;
+/* footer */ 
+#footer{
+    position:fixed;
+    bottom:0;
 }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
