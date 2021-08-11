@@ -139,7 +139,7 @@ body{
   line-height: 150%;
   width:74px;
   height:29px;
-  border: none;
+  
   border-radius: 8px;
   background: #1C1C1C;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -321,9 +321,16 @@ color: #FFFFFF;
 #form{
   display: none;
   position: absolute;
-  right:    20;
-  bottom:   10%;
-  margin-right: 10px;
+  margin-left:10px;
+  right:20;
+  bottom:10%;
+  margin-right: 5px;
+}
+
+.formButton{
+  border:none;
+  background:#FFFFFF;
+  font-family: 'Lato',sans-serif;
 }
 
 .TaskList_btn button{

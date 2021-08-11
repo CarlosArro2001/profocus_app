@@ -52,8 +52,8 @@
               <div id="form-section">
                 <div id="form">
                     <input placeholder="I will eat cookies" id="TaskInput"><br>
-                    <input type="submit" value="Submit" onclick="AddTask(); return false;">
-                    <button onclick="hideForm();" class="asdf">Close</button>
+                    <input type="submit" value="Submit" onclick="AddTask(); return false;" class="formButton">
+                    <button onclick="hideForm();" class="formButton">Close</button>
                 </div>
               </div>
               </div>
@@ -120,30 +120,30 @@
                       <!-- Buttons for increasing -->
                       <div class="row justify-content-center" id="optionRow1">
                           <div class="col-md-auto">
-                            <button class="optionBtn">+1m</button>
+                            <button class="optionBtn" onClick="increase1()">+1m</button>
                           </div>
                           <div class="col-md-auto">
-                            <button class="optionBtn">+5m</button>
+                            <button class="optionBtn" onClick="increase5()">+5m</button>
                           </div>
                           <div class="col-md-auto">
-                            <button class="optionBtn">+10m</button>
+                            <button class="optionBtn"onClick="increase10()">+10m</button>
                           </div>
                           <div class="col-md-auto">
-                            <button class="optionBtn">+15m</button>
+                            <button class="optionBtn" onClick="increase15()">+15m</button>
                           </div>
                       </div>
                       <div class="row justify-content-center" id="optionRow2">
                         <div class="col-md-auto">
-                          <button class="optionBtn">+30m</button>
+                          <button class="optionBtn" onClick="increase30()">+30m</button>
                         </div>
                         <div class="col-md-auto">
-                          <button class="optionBtn">+1hr</button>
+                          <button class="optionBtn" onClick="increase60()">+1hr</button>
                         </div>
                         <div class="col-md-auto">
-                          <button id="optionClear" onClick="clear()" >Clear</button>
+                          <button id="optionClear" onClick="clearTimer()">Clear</button>
                         </div>
                       </div>
-                      <!-- -->
+                      <!-- Start Timer -->
                       <div class="row justify-content-center" id="optionRow2">
                         <div class="col-md-auto">
                           <button id="optionStart" onClick="start()">Start Timer</button>

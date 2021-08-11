@@ -5,7 +5,7 @@
 
 */
 
-// preset values for the timer function template 
+// preset values for the timer function template
 var min = 25;
 var sec = "00";
 var hrs ="00";
@@ -54,9 +54,42 @@ function start(){
     }
 }
 
-// executed when the clear button is clicked on, this clears or resets the timer. 
-function clear(){
-    console.log("executed");
+// executed when the clear button is clicked on, this clears and resets the timer. 
+function clearTimer(){
+    clearInterval(minutes_interval);
+    clearInterval(seconds_interval);
+    min = 25;
+    sec = "00";
+    hrs = "00";
+    document.getElementById("minutes").innerHTML = min;
+    document.getElementById("seconds").innerHTML = sec;
+    document.getElementById("hours").innerHTML = hrs;
+}
+
+//functions for increasing the time of the pomodoro
+function increase1(){
+    min += 1;
+    document.getElementById("minutes").innerHTML = min;    
+}
+function increase5(){
+    min += 5;
+    document.getElementById("minutes").innerHTML = min;    
+}
+function increase10(){
+    min += 10;
+    document.getElementById("minutes").innerHTML = min;    
+}
+function increase15(){
+    min += 15;
+    document.getElementById("minutes").innerHTML = min;    
+}
+function increase30(){
+    min += 30;
+    document.getElementById("minutes").innerHTML = min;    
+}
+function increase60(){
+    min += 60;
+    document.getElementById("minutes").innerHTML = min;    
 }
 
 
