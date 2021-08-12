@@ -4,6 +4,9 @@
     Last Update Date & Time : Tuesday,August 10 2021  5:55pm
 
 */
+//variables to store the audio
+var check = new Audio("check.mp3");
+var sound = "";
 
 // preset values for the timer function template
 var min = 25;
@@ -46,8 +49,10 @@ function start(){
         document.getElementById("seconds").innerHTML = sec;
         if(sec <= 0){
             if(min <= 0){
+                sound = check;
                 clearInterval(minutes_interval);
                 clearInterval(seconds_interval);
+                sound.play();
             }
             sec = 60;
         }
