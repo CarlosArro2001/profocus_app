@@ -99,11 +99,38 @@
                       </div>
                       <!-- Timer buttons section-->
                     <div class="timer-buttons">
-                      <button class="timer-btn"><i class="fas fa-music fa-2x"></i></button>
+                      <button class="timer-btn" onClick="showOptions2()"><i class="fas fa-music fa-2x"></i></button>
                       <button class="timer-btn" id="start" onclick="showOptions()" id="options"><i class="far fa-clock fa-2x"></i></button>
                       <button class="timer-btn"><i class="fas fa-cog fa-2x"></i></button>
                     </div>
                   </div>
+                  <div id="sound-options">
+                    <div class="container">
+                      <div class="row justify-content-center">
+                        <div class="col-md-auto" id="title-sound-options">
+                          <p> Press the play button to preview and set the sound when the timer</p>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="sound-section col-md-auto">
+                          <p>Check sound</p>
+                          <button class="sound-btn" id="check-btn"  onClick="checkSound()"><i class="far fa-play-circle fa-2x"></i></button>
+                        </div>
+                        <div class="sound-section col-md-auto">
+                          <p>SlowMorning sound</p>
+                          <button class="sound-btn" id="SlowMorning-btn" onClick="SlowMorningSound()"><i class="far fa-play-circle fa-2x"></i></button>
+                        </div>
+                        <div class="sound-section col-md-auto">
+                          <p>Daybreak sound</p>
+                          <button class="sound-btn" id="Daybreak-btn" onClick="DaybreakSound()"><i class="far fa-play-circle fa-2x"></i></button>
+                        </div>
+                        <div class="sound-section col-md-auto">
+                          <p>EarlyRiser sound</p>
+                          <button class="sound-btn" id="EarlyRiser-btn" onClick="EarlyRiserSound()"><i class="far fa-play-circle fa-2x"></i></button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
                   <!-- Timer options -->
                   <div id="timer-options">
                     <div class="container">
@@ -151,8 +178,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                </div>
+                
+              </div>
               </div>
               <div class="col" id="Right_section">
                 <button href="#menu-toggle" onclick="hideArrow()" id="menu-toggle" class="float-right">

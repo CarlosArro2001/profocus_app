@@ -114,10 +114,51 @@ body{
     color:#FF3257;
 }
 
+/* sound-options*/ 
+#sound-options{
+  display:none;
+  text-align: center !important;
+}
+
+#title-sound-options{
+  font-family: 'Pacifico',cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 44px;
+  /* identical to box height */
+  color: #FFFFFF;
+}
+.sound-section{
+  font-family: 'Lato',sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding:10px 0px 10px 0px;
+  border-radius: 3px;
+  background-color: white;
+}
+.sound-btn{
+  border:none;
+  background-color: white;
+  border-radius: 15rem;
+  transition: 0.3s ease;
+}
+.sound-btn:hover{
+  background-color: #545454;
+  color:#FF3257;
+}
+
+/* timer options section */
 #timer-options{
   display:none;
   text-align: center !important;
 }
+
 
 .optionBtn{
   font-family: 'Lato',sans-serif !important;
@@ -128,7 +169,7 @@ body{
   width:74px;
   height:29px;
   border: none;
-  border-radius: 8px;
+  border-radius: 15rem;
 }
 #optionClear{
   color:white;
@@ -166,9 +207,6 @@ body{
 #optionRow2{
   padding-top:9px;
 }
-
-
-
 /* Switch bar */
 
 #optionRow1{
@@ -295,12 +333,12 @@ input:checked + .slider:before {
   
 #sidebar-wrapper h5{
   font-family: 'Pacifico',cursive;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 44px;
-/* identical to box height */
-color: #FFFFFF;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 44px;
+  /* identical to box height */
+  color: #FFFFFF;
 }
 
 #Right_Section{

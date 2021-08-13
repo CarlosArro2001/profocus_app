@@ -4,9 +4,14 @@
     Last Update Date & Time : Tuesday,August 10 2021  5:55pm
 
 */
-//variables to store the audio
-var check = new Audio("check.mp3");
-var sound = "";
+/* variables containing the audio files from the sounds folder*/
+var check_sound = new Audio("sounds/check.mp3");
+var SlowMorning_Sound = new Audio("sounds/SlowMorning.mp3");
+var Daybreak_Sound = new Audio("sounds/DayBreak.mp3");
+var EarlyRiser_Sound = new Audio("sounds/EarlyRiser.mp3");
+
+// variable that will contain the sound the user chooses
+var sound = null;
 
 // preset values for the timer function template
 var min = 25;
@@ -20,11 +25,50 @@ function template(){
     document.getElementById("seconds").innerHTML = sec;
 }
 
+//functions for playing and setting the sounds 
+function showOptions2(){
+    var timer_options = document.getElementById("timer-options");
+    var sound_options = document.getElementById("sound-options");
+    if(timer_options.style.display =="none"){
+        sound_options.style.display = "block";
+    }else{
+        timer_options.style.display = "none";
+        sound_options.style.display = "block";
+    }
+}
+
+function checkSound(){
+    sound = check_sound;
+    console.log(sound);
+    sound.play();
+}
+function DaybreakSound(){
+    sound = Daybreak_Sound;
+    console.log(sound);
+    sound.play();
+}
+function SlowMorningSound(){
+    sound = SlowMorning_Sound;
+    console.log(sound);
+    sound.play();
+}
+function EarlyRiserSound(){
+    sound = EarlyRiser_Sound;
+    console.log(sound);
+    sound.play();
+}
+
 
 //executed when the timer button (center) is clicked on
 function showOptions(){
-    var options = document.getElementById("timer-options");
-    options.style.setProperty("display","block","important");
+    var timer_options = document.getElementById("timer-options");
+    var sound_options = document.getElementById("sound-options");
+    if(sound_options.style.display == "none"){
+        timer_options.style.setProperty("display","block","important");
+    }else{
+        timer_options.style.display = "block";
+        sound_options.style.display = "none";
+    }
 }
 
 //executed when the start button is clicked on 
@@ -47,11 +91,11 @@ function start(){
     function secondsTimer(){
         sec = sec - 1;
         document.getElementById("seconds").innerHTML = sec;
-        if(sec <= 0){
-            if(min <= 0){
-                sound = check;
+        if(sec <= 57){
+            if(min <= 24){
                 clearInterval(minutes_interval);
                 clearInterval(seconds_interval);
+                console.log(sound);
                 sound.play();
             }
             sec = 60;
