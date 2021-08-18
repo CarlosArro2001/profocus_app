@@ -32,7 +32,8 @@ body{
 
 /* Timer section*/
 #timer_Section{
-  margin-top: 5px;
+  margin-top: 60px;
+  max-width: 100%;
 }
 .timer{
   align-items: center;
@@ -55,7 +56,7 @@ body{
 #timer-text h4{
   font-family: 'Lato',sans-serif !important;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 31px;
   line-height: 37px;
   }
@@ -63,8 +64,8 @@ body{
 .timer-outer{
     background-color: #FCFCFC;
     text-align:center;
-    width:15.2em;
-    height:15.2em;
+    width:173px;
+    height:173px;
     border-radius:10rem;
     display:flex;
     justify-content: center;
@@ -73,8 +74,8 @@ body{
 .timer-inner{
     background-color: #FFB6D5;
     text-align:center;
-    width:14em;
-    height:14em;
+    width:160.99px;
+    height:160.99px;
     border-radius:15rem;
     display:flex;
     justify-content: center;
@@ -83,17 +84,19 @@ body{
 .timer-text{
     background-color: #FCFCFC;
     text-align:center;
-    width:12em;
-    height:12em;
+    width:142.56px;
+    height:142.56px;
     border-radius:15rem;
     display:flex;
     justify-content: center;
 }
 .timer-text h4{
     color:#3D3D3D;
-    padding: 22% 0 23% 0;
     font-family: 'Lato', sans-serif;
     font-size: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 .timer-btn{
     background-color: white ;
@@ -129,6 +132,7 @@ body{
   /* identical to box height */
   color: #FFFFFF;
 }
+
 .sound-section{
   font-family: 'Lato',sans-serif;
   font-size: 14px;
@@ -300,6 +304,7 @@ input:checked + .slider:before {
     height: 100%;
     margin-right: -250px;
     overflow-y: auto;
+    overflow-x: hidden;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.3312) 0%,
      rgba(255, 255, 255, 0.6048) 65.62%, rgba(244, 244, 244, 0) 100%);
     -webkit-transition: all 0.5s ease;
@@ -341,19 +346,23 @@ input:checked + .slider:before {
   color: #FFFFFF;
 }
 
-#Right_Section{
-    height:100%;
-}
 #menu-toggle{
-    padding-top:100px;
-    padding-bottom:100px;
-    border: none;
-    background: none;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3312) 0%,
-     rgba(255, 255, 255, 0.6048) 65.62%, rgba(244, 244, 244, 0) 100%);
-    position: absolute;
-    top: 60%;
-    right: 0;
+  top: -1px;
+  margin:0 auto;
+  border:none;
+  background: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3312) 0%,
+   rgba(255, 255, 255, 0.6048) 65.62%, rgba(244, 244, 244, 0) 100%);
+  position:fixed;
+  right:0;
+  height: 100vh;
+  overflow:hidden;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; 
+  border: none;
+  margin: 0;
+  */
 }
 
 #form{
@@ -373,8 +382,8 @@ input:checked + .slider:before {
 
 .TaskList_btn button{
   position: absolute;
-  bottom:   10%;
-  right:0;
+  bottom: 10%;
+  right:10px;
   background: white;
   border-radius: 15rem;
   padding: 1rem;
@@ -395,11 +404,13 @@ input:checked + .slider:before {
   font-weight: 700;
   line-height: 17px;
   letter-spacing: 0em;
-  padding: 5px 50px 5px 0;
+  width:200px;
+  padding: 5px 0px 5px 0px;
   border-radius: 3px;
   min-width: 100px;
   display: inline-block;
 }
+
 
 #list li{
   margin-bottom: 15px;
@@ -427,7 +438,8 @@ input:checked + .slider:before {
 }
 
 .checkmark{
-  padding: 4px 10px 4px 10px ;
+  margin-left:2px;
+  padding: 8px 8px 8px 8px ;
   background-color: #F4F4F4;
   position: relative;
   transition: background-color 0.4s;

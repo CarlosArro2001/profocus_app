@@ -29,14 +29,16 @@ function template(){
 function showOptions2(){
     var timer_options = document.getElementById("timer-options");
     var sound_options = document.getElementById("sound-options");
-    if(timer_options.style.display =="none"){
+    if (sound_options.style.display === "none") {
         sound_options.style.display = "block";
-    }else{
+      } else {
+        sound_options.style.display = "none";
+      }
+      if(timer_options.style.display === "block" && sound_options.style.display =="none"){
         timer_options.style.display = "none";
         sound_options.style.display = "block";
     }
 }
-
 function checkSound(){
     sound = check_sound;
     console.log(sound);
@@ -57,20 +59,20 @@ function EarlyRiserSound(){
     console.log(sound);
     sound.play();
 }
-
-
 //executed when the timer button (center) is clicked on
 function showOptions(){
     var timer_options = document.getElementById("timer-options");
     var sound_options = document.getElementById("sound-options");
-    if(sound_options.style.display == "none"){
-        timer_options.style.setProperty("display","block","important");
-    }else{
+    if (timer_options.style.display === "none") {
         timer_options.style.display = "block";
+      } else {
+        timer_options.style.display = "none";
+      }
+    if(sound_options.style.display === "block" && timer_options.style.display =="none"){
         sound_options.style.display = "none";
+        timer_options.style.display = "block";
     }
 }
-
 //executed when the start button is clicked on 
 //this 
 var minutes_interval = 0;
@@ -140,9 +142,6 @@ function increase60(){
     min += 60;
     document.getElementById("minutes").innerHTML = min;    
 }
-
-
-
 //jQuery functions to toggle and untoggle the task menu 
 $("#menu-toggle").click(function (e) {
     e.preventDefault();
@@ -158,11 +157,14 @@ $("#menu-untoggle").click(function(e){
 //functions for toggling and untoggling the form inthe task menu 
   function toggleForm(){
       var form = document.getElementById("form");
-      form.style.setProperty("display","block","important");
-  }
-  function hideForm(){
-      var form = document.getElementById("form");
-      form.style.setProperty("display","none","important");
+      var btn = document.getElementById("Task_Btn");
+      if (form.style.display === "none") {
+        form.style.display = "block";
+        btn.style.transform = "rotate(45deg)";
+      } else {
+        form.style.display = "none";
+        btn.style.transform = "rotate(-90deg)";
+      }
   }
 
 

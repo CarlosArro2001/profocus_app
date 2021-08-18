@@ -3,25 +3,25 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css-->
     <link rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">    
     <!-- Font Awesome-->
     <script src="https://kit.fontawesome.com/996973c893.js"></script>
 
     <title>FocusPod</title>
   </head>
   <body onload="template()" >
-      <nav class="navbar">
-        <div class="container-fluid">
+      <!-- <nav class="navbar">
+        <div class="col-sm-4">
           <a class="navbar-brand" href="index.html" id="FocusPod_title">FocusPod</a>
         </div>
-      </nav>
+      </nav> -->
       <div id="wrapper">
 
         <!-- Sidebar -->
@@ -53,14 +53,13 @@
                 <div id="form">
                     <input placeholder="I will eat cookies" id="TaskInput"><br>
                     <input type="submit" value="Submit" onclick="AddTask(); return false;" class="formButton">
-                    <button onclick="hideForm();" class="formButton">Close</button>
                 </div>
               </div>
               </div>
               <!-- Toggle form button -->
               <div class="col">
                 <div class="TaskList_btn">
-                  <button onClick="toggleForm()"> <i class="fas fa-plus fa-2x"></i></button>
+                  <button onClick="toggleForm()" id="Task_Btn"> <i class="fas fa-plus fa-2x"></i></button>
                 </div>
               </div>
             </div>
@@ -72,38 +71,48 @@
         <div id="page-content-wrapper">
           <div class="container-fluid">
             <div class="row">
+              
               <div class="col-xs-2">
+                <div>
+                  <a class="navbar-brand" href="index.html" id="FocusPod_title">FocusPod</a>
+                </div>
                 <div id="footer">
                   <p>CCL Dev (c)</p>
                 </div>
               </div>
               <div class="col" id="timer_Section">
+                  <div class="col"></div>
                   <!-- Timer -->
-                  <div class="row">
-                    <h4 id="timer_title">Welcome Back, Lem!</h4>
-                      <div class="timer">
-                        <!-- The white section-->
-                        <div class="timer-outer">
-                          <!-- The pink sections--> 
-                          <div class="timer-inner">
-                              <!-- Where the timer text will be displayed-->
-                              <div class="timer-text">
-                                  <h4 id="hours"></h4>
-                                  <h4>:</h4>
-                                  <h4 id="minutes"></h4>
-                                  <h4>:</h4>
-                                  <h4 id="seconds"></h4>
+                    <div class="col">
+                      <h4 id="timer_title">Welcome Back, Lem!</h4>
+                        <div class="timer">
+                          <!-- The white section-->
+                          <div class="timer-outer">
+                            <!-- The pink sections--> 
+                            <div class="timer-inner">
+                                <!-- Where the timer text will be displayed-->
+                                <div class="timer-text">
+                                    <h4 id="hours"></h4>
+                                    <h4>:</h4>
+                                    <h4 id="minutes"></h4>
+                                    <h4>:</h4>
+                                    <h4 id="seconds"></h4>
+                                </div>
                               </div>
-                            </div>
+                          </div>
+                        </div>
+                        <div class="timer-buttons">
+                          <button class="timer-btn" onClick="showOptions2()"><i class="fas fa-music fa-2x"></i></button>
+                          <button class="timer-btn" id="start" onclick="showOptions()" id="options"><i class="far fa-clock fa-2x"></i></button>
+                          <button class="timer-btn"><i class="fas fa-cog fa-2x"></i></button>
                         </div>
                       </div>
+                      <div class="col" id="Right_section">
+                        <button href="#menu-toggle" onclick="hideArrow()" id="menu-toggle" class="float-right">
+                          <i class="fas fa-chevron-left"></i>
+                        </button>
+                      </div>
                       <!-- Timer buttons section-->
-                    <div class="timer-buttons">
-                      <button class="timer-btn" onClick="showOptions2()"><i class="fas fa-music fa-2x"></i></button>
-                      <button class="timer-btn" id="start" onclick="showOptions()" id="options"><i class="far fa-clock fa-2x"></i></button>
-                      <button class="timer-btn"><i class="fas fa-cog fa-2x"></i></button>
-                    </div>
-                  </div>
                   <div id="sound-options">
                     <div class="container">
                       <div class="row justify-content-center">
@@ -131,62 +140,63 @@
                     </div>
                   </div>
                 </div>
+                
+              </div>
                   <!-- Timer options -->
-                  <div id="timer-options">
-                    <div class="container">
-                      <!-- Toggle button for repeating timer-->
-                      <div class="row justify-content-center" id="optionRow1">
+                <div id="timer-options">
+                  <div class="container">
+                    <!-- Toggle button for repeating timer-->
+                    <div class="row justify-content-center" id="optionRow1">
+                      <div class="col-md-auto">
+                        <label class="switch">
+                          <input type="checkbox" checked>
+                          <span class="slider round">
+                          </span>
+                        </label>
+                      </div>
+                  </div>
+                    <!-- Buttons for increasing -->
+                    <div class="row justify-content-center" id="optionRow1">
                         <div class="col-md-auto">
-                          <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider round">
-                            </span>
-                          </label>
+                          <button class="optionBtn" onClick="increase1()">+1m</button>
+                        </div>
+                        <div class="col-md-auto">
+                          <button class="optionBtn" onClick="increase5()">+5m</button>
+                        </div>
+                        <div class="col-md-auto">
+                          <button class="optionBtn"onClick="increase10()">+10m</button>
+                        </div>
+                        <div class="col-md-auto">
+                          <button class="optionBtn" onClick="increase15()">+15m</button>
                         </div>
                     </div>
-                      <!-- Buttons for increasing -->
-                      <div class="row justify-content-center" id="optionRow1">
-                          <div class="col-md-auto">
-                            <button class="optionBtn" onClick="increase1()">+1m</button>
-                          </div>
-                          <div class="col-md-auto">
-                            <button class="optionBtn" onClick="increase5()">+5m</button>
-                          </div>
-                          <div class="col-md-auto">
-                            <button class="optionBtn"onClick="increase10()">+10m</button>
-                          </div>
-                          <div class="col-md-auto">
-                            <button class="optionBtn" onClick="increase15()">+15m</button>
-                          </div>
+                    <div class="row justify-content-center" id="optionRow2">
+                      <div class="col-md-auto">
+                        <button class="optionBtn" onClick="increase30()">+30m</button>
                       </div>
-                      <div class="row justify-content-center" id="optionRow2">
-                        <div class="col-md-auto">
-                          <button class="optionBtn" onClick="increase30()">+30m</button>
-                        </div>
-                        <div class="col-md-auto">
-                          <button class="optionBtn" onClick="increase60()">+1hr</button>
-                        </div>
-                        <div class="col-md-auto">
-                          <button id="optionClear" onClick="clearTimer()">Clear</button>
-                        </div>
+                      <div class="col-md-auto">
+                        <button class="optionBtn" onClick="increase60()">+1hr</button>
                       </div>
-                      <!-- Start Timer -->
-                      <div class="row justify-content-center" id="optionRow2">
-                        <div class="col-md-auto">
-                          <button id="optionStart" onClick="start()">Start Timer</button>
-                        </div>
+                      <div class="col-md-auto">
+                        <button id="optionClear" onClick="clearTimer()">Clear</button>
+                      </div>
+                    </div>
+                    <!-- Start Timer -->
+                    <div class="row justify-content-center" id="optionRow2">
+                      <div class="col-md-auto">
+                        <button id="optionStart" onClick="start()">Start Timer</button>
                       </div>
                     </div>
                   </div>
-                
-              </div>
-              </div>
-              <div class="col" id="Right_section">
-                <button href="#menu-toggle" onclick="hideArrow()" id="menu-toggle" class="float-right">
-                  <i class="fas fa-chevron-left"></i>
-                </button>
-              </div>
+                </div>
+          </div>
+            <!-- <div class="col" id="Right_section">
+              <button href="#menu-toggle" onclick="hideArrow()" id="menu-toggle" class="float-right">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+            </div> -->
             </div>
+          </div>
         </div>
         <!-- /#page-content-wrapper -->
       
