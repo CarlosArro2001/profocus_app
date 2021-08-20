@@ -142,6 +142,86 @@ function increase60(){
     min += 60;
     document.getElementById("minutes").innerHTML = min;    
 }
+
+function showOptions3(){
+    var settings = document.getElementById("settings-options");
+    if(settings.style.display === 'none'){
+        settings.style.display = 'block';
+    }else{
+        settings.style.display = 'none';
+    }
+}
+
+function showBg(){
+    var settingsParent = document.getElementById('settings-options');
+    var settingsChild = document.getElementById("settings-bg");
+    if(settingsChild.style.display === "none"){
+        settingsParent.style.display = "none";
+        settingsChild.style.display = "block";
+    }else{
+        settingsChild.style.display = "none";
+        settingsParent.style.display = "block";
+    }
+}
+function setBg1(){
+    var body = document.getElementsByTagName('body')[0];
+    body.style.backgroundImage = 'url("background.jpg")';
+}   
+function setBg2(){
+    var body = document.getElementsByTagName('body')[0];
+    body.style.backgroundImage = 'url("background2.jpg")';
+}
+
+function returnSettings(){
+    document.getElementById('settings-options').style.display = "block";
+    document.getElementById("settings-bg").style.display = "none";
+}
+
+
+/*Information section functions */
+function showInfo(){
+    var info_Sec = document.getElementById("info-section");
+    if(info_Sec.style.display ==="none"){
+        info_Sec.style.display = "block";
+    }else{
+        info_Sec.style.display = "none";
+    }
+}
+
+function showInfoSec1(){
+    var sec1 = document.getElementById("InfoSec1");
+    if(sec1.style.display === "none"){
+        sec1.style.display = "block";
+    }else{
+        sec1.style.display ="none";
+    }
+}
+function showInfoSec2(){
+    var sec2 = document.getElementById("InfoSec2");
+    if(sec2.style.display === "none"){
+        sec2.style.display = "block";
+    }else{
+        sec2.style.display ="none";
+    }
+}
+function showInfoSec3(){
+    var sec3 = document.getElementById("InfoSec3");
+    if(sec3.style.display === "none"){
+        sec3.style.display = "block";
+    }else{
+        sec3.style.display ="none";
+    }
+}
+function showInfoSec4(){
+    var sec4 = document.getElementById("InfoSec4");
+    if(sec4.style.display === "none"){
+        sec4.style.display = "block";
+    }else{
+        sec4.style.display ="none";
+    }
+}
+
+
 //jQuery functions to toggle and untoggle the task menu 
 $("#menu-toggle").click(function (e) {
     e.preventDefault();
@@ -226,3 +306,4 @@ function showArrow(){
     var btn = document.getElementById("menu-toggle");
     btn.style.setProperty("display","block","important");
 }
+

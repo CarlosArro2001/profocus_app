@@ -295,6 +295,63 @@ input:checked + .slider:before {
 }
 
 
+/* settings-options */
+#settings-options{
+  display:none;
+  text-align: center !important;
+}
+
+.settings-btn1{
+  background-color: white ;
+  border-radius: 15rem;
+  padding: 1rem;
+  transition: 0.4s ease;
+  border:2px solid white;
+}
+
+/* settings-bg */
+#settings-bg{
+  margin-top: 15px;
+  display:none;
+  text-align:center !important;
+}
+
+#settings-bg-btn{
+  margin-top: 10px;
+}
+
+.bg-option{
+  width:18em;
+  height:auto;
+}
+
+
+.bg-btn{
+  border:none;
+  background:#FFFFFF;
+  font-family: 'Lato',sans-serif;
+  transition: 0.3s ease;
+  border-radius: 20rem;
+
+}
+
+.bg-btn:hover{
+  background-color: #545454;
+  color:#FF3257;
+  
+}
+#return-btn{
+  border:none;
+  background-color: white;
+  border-radius: 20rem;
+  transition: 0.3s ease;
+}
+
+#return-btn:hover{
+  background-color: #545454;
+  color:#FF3257;
+}
+
 /* Task List section  */
 #sidebar-wrapper {
     z-index: 1000;
@@ -483,6 +540,30 @@ input:checked + .slider:before {
   top:0;
 }
 
+/* Info section */
+
+#info-section{
+  display: none;
+}
+
+#InfoSec1,#InfoSec2,#InfoSec3,#InfoSec4{
+  display: none;
+}
+
+.info-sub-section{
+  background: rgba(235,235,235,0.8);
+}
+
+#info-section button{
+  border:none;
+  background: rgba(235,235,235,0.5);
+  transition: 0.3s ease;
+}
+
+#info-section button:hover{
+  background: rgba(84,84,84,0.8);
+  color:rgb(255, 50, 87)
+}
 /* footer */ 
 #footer{
     position:fixed;

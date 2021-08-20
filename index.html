@@ -104,7 +104,7 @@
                         <div class="timer-buttons">
                           <button class="timer-btn" onClick="showOptions2()"><i class="fas fa-music fa-2x"></i></button>
                           <button class="timer-btn" id="start" onclick="showOptions()" id="options"><i class="far fa-clock fa-2x"></i></button>
-                          <button class="timer-btn"><i class="fas fa-cog fa-2x"></i></button>
+                          <button class="timer-btn" onClick="showOptions3()"><i class="fas fa-cog fa-2x"></i></button>
                         </div>
                       </div>
                       <div class="col" id="Right_section">
@@ -140,8 +140,6 @@
                     </div>
                   </div>
                 </div>
-                
-              </div>
                   <!-- Timer options -->
                 <div id="timer-options">
                   <div class="container">
@@ -189,6 +187,75 @@
                     </div>
                   </div>
                 </div>
+                <div id="settings-options">
+                  <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-md-auto">
+                        <button class="settings-btn1" onclick="showBg()"> BG </button>
+                      </div>
+                      <div class="col-md-auto">
+                        <button class="settings-btn1" onclick="showInfo()"><i class="fas fa-info"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="settings-bg">
+                  <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-md-auto">
+                        <img src="background.jpg" class="bg-option">
+                      </div>
+                      <div class="col-md-auto">
+                        <img src="background2.jpg" class="bg-option">
+
+                      </div>
+                    </div>
+                    <div class="row justify-content-center" id="settings-bg-btn">
+                      <div class="col-md-auto">
+                        <button class="bg-btn" onclick="setBg1()">Set background 1</button>
+                      </div>
+                      <div class="col-md-auto">
+                        <button id="return-btn" onclick="returnSettings()"><i class="fas fa-undo"></i></button>
+                      </div>
+                      <div class="col-md-auto">
+                        <button class="bg-btn"onclick="setBg2()">Set background 2</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+              <div class="col-5" id="info-section">
+                <div class="container-fluid">
+                  <div class="row justify-content-center">
+                    <button onclick="showInfoSec1()" class="info-btn"><h4>What is FocusPod?</h4></button>
+                    <div id="InfoSec1" class="info-sub-section">
+                      <p>FocusPod is a productivity web-application that focuses on the study method known as the "Pomodoro" method.</p>
+                    </div>
+                    <button onclick="showInfoSec2()" class="info-btn"><h4>How to use FocusPod</h4></button>
+                    <div id="InfoSec2" class="info-sub-section">
+                      <p><b>To start the timer</b> you need to click on the timer button (middle one) and then press <b>Start Timer</b>.</p>
+                      <p><b>To change the timer</b> click on the timer button (middle) press the choices of either 1min (1min) as well as the others.</p>
+                      <p><b>We also have the option to change the background</b> which can be done via the background section (settings -> BG)</p>
+                      <p><b>We also have a task list section</b>, access through the right arrow which toggles and untoggles the task list </p>
+                      <p><b>To add a task</b> just press the "+" button which will open a form, the same button will close the form</p>
+                      <p><b>You can change the sound that will be played at the end of a pomodoro</b>. Simply press on the music note icon play the sound which will also set it.</p>
+                      <p><b>Incase your screen is clogged up with too many options</b>, simply press the three icons to close them.</p>
+                    </div>
+                    <button onclick="showInfoSec3()" class="info-btn"><h4>Team Credits</h4></button>
+                    <div id="InfoSec3" class="info-sub-section">
+                      <p>This application was made by a group of discord friends</p>
+                      <ul>
+                        <li>TunedN54 (U.I Designer and Mobile App Developer)</li>
+                        <li>Lemonsu (U.I Designer)</li>
+                        <li>Carlos. (Web Developer)</li>
+                      </ul>
+                                            
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              </div>
           </div>
             <!-- <div class="col" id="Right_section">
               <button href="#menu-toggle" onclick="hideArrow()" id="menu-toggle" class="float-right">
