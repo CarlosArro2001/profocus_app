@@ -178,7 +178,7 @@ function returnSettings(){
 }
 
 
-/*Information section functions */
+/*Information section functions*/
 function showInfo(){
     var info_Sec = document.getElementById("info-section");
     if(info_Sec.style.display ==="none"){
@@ -249,6 +249,8 @@ $("#menu-untoggle").click(function(e){
 
 
   var check_no = 0;
+  var no_Tasks = 0;
+  var finish_no_Tasks = 0;
   // function will be invoked after submit button located in the Task list form clicked
   function AddTask(){
       var task = document.createElement('div');
@@ -271,6 +273,15 @@ $("#menu-untoggle").click(function(e){
       var checkmark = document.createElement('label');
       checkmark.htmlFor = checkbox.id;
       checkmark.className = "checkmark";
+      checkbox.onchange = function(){
+            if(checkbox.checked){
+                finish_no_Tasks +=1
+                document.getElementById("Task_num1").innerHTML = finish_no_Tasks;
+            }else{
+                finish_no_Tasks -=1
+                document.getElementById("Task_num1").innerHTML = finish_no_Tasks;
+            }
+        }   
       //delete button
       var btnRMV = document.createElement("span");
       btnRMV.setAttribute("class","far fa-trash-alt");
@@ -278,6 +289,8 @@ $("#menu-untoggle").click(function(e){
       var remove = document.createElement("button");
       remove.onclick= function(){
           this.parentNode.parentNode.remove();
+          no_Tasks -= 1;
+          document.getElementById("Task_num2").innerHTML = no_Tasks;
       }
       //adding the elements
       li.appendChild(task);
@@ -294,6 +307,8 @@ $("#menu-untoggle").click(function(e){
           document.getElementById("list").appendChild(li);
       }
       document.getElementById("TaskInput").value=""; 
+      no_Tasks += 1;
+      document.getElementById("Task_num2").innerHTML = no_Tasks;
   }
 
 // functions to hide and show the arrow for toggling and untoggling the task menu

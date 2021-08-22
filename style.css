@@ -403,6 +403,24 @@ input:checked + .slider:before {
   color: #FFFFFF;
 }
 
+#TaskTitle{
+  margin-top: 20px;
+}
+
+#TaskNoTracker{
+  color:white; 
+  font-family: 'Lato',sans-serif;
+  float:right;
+  margin-top: 36px;
+  display: flex;
+  flex-direction: row; 
+}
+
+#check-square-icon{
+  margin-left: 6.75px;
+  margin-top:5px !important;
+}
+
 #menu-toggle{
   top: -1px;
   margin:0 auto;
@@ -564,7 +582,9 @@ input:checked + .slider:before {
   background: rgba(84,84,84,0.8);
   color:rgb(255, 50, 87)
 }
+
 /* footer */ 
+
 #footer{
     position:fixed;
     bottom:0;
