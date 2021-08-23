@@ -268,17 +268,20 @@ $("#menu-untoggle").click(function(e){
       var checkbox = document.createElement("input");
       checkbox.type="checkbox";
       checkbox.className="check";
-      check_no += 1
+      check_no += 1;
       checkbox.id="check " +check_no;
       var checkmark = document.createElement('label');
       checkmark.htmlFor = checkbox.id;
       checkmark.className = "checkmark";
       checkbox.onchange = function(){
             if(checkbox.checked){
-                finish_no_Tasks +=1
+                finish_no_Tasks +=1;
                 document.getElementById("Task_num1").innerHTML = finish_no_Tasks;
             }else{
-                finish_no_Tasks -=1
+                finish_no_Tasks -=1;
+                if(finish_no_Tasks < 0){
+                    finish_no_Tasks = 0;
+                }
                 document.getElementById("Task_num1").innerHTML = finish_no_Tasks;
             }
         }   
@@ -291,6 +294,11 @@ $("#menu-untoggle").click(function(e){
           this.parentNode.parentNode.remove();
           no_Tasks -= 1;
           document.getElementById("Task_num2").innerHTML = no_Tasks;
+          finish_no_Tasks -= 1;
+          if(finish_no_Tasks < 0){
+                finish_no_Tasks = 0;
+          }
+          document.getElementById("Task_num1").innerHTML = finish_no_Tasks ;
       }
       //adding the elements
       li.appendChild(task);
