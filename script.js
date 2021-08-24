@@ -1,7 +1,7 @@
 /*
     Author : Carlos Raniel Ariate Arro 
 
-    Last Update Date & Time : Tuesday,August 10 2021  5:55pm
+    Last Update Date & Time : Tuesday,August 24 2021  7:52pm
 
 */
 /* variables containing the audio files from the sounds folder*/
@@ -11,19 +11,19 @@ var Daybreak_Sound = new Audio("sounds/DayBreak.mp3");
 var EarlyRiser_Sound = new Audio("sounds/EarlyRiser.mp3");
 
 // variable that will contain the sound the user chooses
-var sound = null;
+var sound = check_sound;
 
 // preset values for the timer function template
 var min = 25;
 var sec = "00";
 var hrs ="00";
-
 //executed when the website is loaded the body will call the template() function via onload event
-function template(){
+  function template() {
     document.getElementById("hours").innerHTML = hrs;
     document.getElementById("minutes").innerHTML = min;
-    document.getElementById("seconds").innerHTML = sec;
-}
+    document.getElementById("seconds").innerHTML = sec;  
+    document.getElementById("timer_title").innerHTML = "Ready to grind?";
+  }
 
 //functions for playing and setting the sounds 
 function showOptions2(){
@@ -77,15 +77,17 @@ function showOptions(){
 //this 
 var minutes_interval = 0;
 var seconds_interval = 0;
+//quotes to display
+const start_quotes = ["You got this!","I can and I will!","Always Remember Your Focus Determines Your Reality.","You better not be procastinating."];
+const finished_quotes = ["Another pom down.","Pom finished","HELL YEAH YOU DID IT","It's okay if you didn't do well this time.","Good job!","Take a break now","What the heck? You're killing it!."];
 function start(){
     min = min-1;
     sec = 59;
     document.getElementById("minutes").innerHTML= min;
     document.getElementById("seconds").innerHTML = sec;
-    
     minutes_interval = setInterval(minutesTimer,60000);
     seconds_interval = setInterval(secondsTimer,1000);
-
+    document.getElementById("timer_title").innerHTML = start_quotes[Math.floor(Math.random()*start_quotes.length)];
     function minutesTimer(){
         min-min-1;
         document.getElementById("minutes").innerHTML = min;
@@ -93,17 +95,22 @@ function start(){
     function secondsTimer(){
         sec = sec - 1;
         document.getElementById("seconds").innerHTML = sec;
-        if(sec <= 57){
-            if(min <= 24){
+        if(sec <= 0){
+            if(min <= 0){
                 clearInterval(minutes_interval);
                 clearInterval(seconds_interval);
+                document.getElementById("timer_title").innerHTML = finished_quotes[Math.floor(Math.random()*finished_quotes.length)];    
                 console.log(sound);
                 sound.play();
             }
             sec = 60;
+            min = min - 1;
         }
     }
 }
+
+
+
 
 // executed when the clear button is clicked on, this clears and resets the timer. 
 function clearTimer(){
@@ -277,13 +284,18 @@ $("#menu-untoggle").click(function(e){
             if(checkbox.checked){
                 finish_no_Tasks +=1;
                 document.getElementById("Task_num1").innerHTML = finish_no_Tasks;
+                this.parentNode.style.background = "#F4F4F4";
+                this.parentNode.style.color = "rgba(0, 0, 0, 0.24)";
             }else{
                 finish_no_Tasks -=1;
+                this.parentNode.style.background = "#FFFFFF";
+                this.parentNode.style.color = "#000000";
                 if(finish_no_Tasks < 0){
                     finish_no_Tasks = 0;
                 }
                 document.getElementById("Task_num1").innerHTML = finish_no_Tasks;
             }
+            
         }   
       //delete button
       var btnRMV = document.createElement("span");
@@ -299,6 +311,7 @@ $("#menu-untoggle").click(function(e){
                 finish_no_Tasks = 0;
           }
           document.getElementById("Task_num1").innerHTML = finish_no_Tasks ;
+          
       }
       //adding the elements
       li.appendChild(task);
