@@ -1,14 +1,10 @@
 /*
     Author : Carlos Raniel Ariate Arro 
 
-    Last Update Date & Time : Tuesday,August 24 2021  7:52pm
+    Last Update Date & Time : Tuesday,August 25 2021  7:40pm
 
 */
-/* variables containing the audio files from the sounds folder*/
-var check_sound = new Audio("sounds/check.mp3");
-var SlowMorning_Sound = new Audio("sounds/SlowMorning.mp3");
-var Daybreak_Sound = new Audio("sounds/DayBreak.mp3");
-var EarlyRiser_Sound = new Audio("sounds/EarlyRiser.mp3");
+
 
 // variable that will contain the sound the user chooses
 var sound = check_sound;
@@ -16,14 +12,20 @@ var sound = check_sound;
 // preset values for the timer function template
 var min = 25;
 var sec = "00";
-var hrs ="00";
 //executed when the website is loaded the body will call the template() function via onload event
   function template() {
-    document.getElementById("hours").innerHTML = hrs;
     document.getElementById("minutes").innerHTML = min;
     document.getElementById("seconds").innerHTML = sec;  
     document.getElementById("timer_title").innerHTML = "Ready to grind?";
   }
+
+/* -------------------Post timer sound functions ------------------------------------------*/
+
+//variables containing the audio files from the sounds folder
+var check_sound = new Audio("sounds/check.mp3");
+var SlowMorning_Sound = new Audio("sounds/SlowMorning.mp3");
+var Daybreak_Sound = new Audio("sounds/DayBreak.mp3");
+var EarlyRiser_Sound = new Audio("sounds/EarlyRiser.mp3");
 
 //functions for playing and setting the sounds 
 function showOptions2(){
@@ -39,6 +41,7 @@ function showOptions2(){
         sound_options.style.display = "block";
     }
 }
+// functions for setting the sounds 
 function checkSound(){
     sound = check_sound;
     console.log(sound);
@@ -59,6 +62,8 @@ function EarlyRiserSound(){
     console.log(sound);
     sound.play();
 }
+
+/* -----------------------------------------------Timer functions -------------------------------*/
 //executed when the timer button (center) is clicked on
 function showOptions(){
     var timer_options = document.getElementById("timer-options");
@@ -74,10 +79,9 @@ function showOptions(){
     }
 }
 //executed when the start button is clicked on 
-//this 
 var minutes_interval = 0;
 var seconds_interval = 0;
-//quotes to display
+//quotes to display "start_quotes" for when the user starts the timer , "finished_quotes" for when the timer ends
 const start_quotes = ["You got this!","I can and I will!","Always Remember Your Focus Determines Your Reality.","You better not be procastinating."];
 const finished_quotes = ["Another pom down.","Pom finished","HELL YEAH YOU DID IT","It's okay if you didn't do well this time.","Good job!","Take a break now","What the heck? You're killing it!."];
 function start(){
@@ -118,10 +122,8 @@ function clearTimer(){
     clearInterval(seconds_interval);
     min = 25;
     sec = "00";
-    hrs = "00";
     document.getElementById("minutes").innerHTML = min;
     document.getElementById("seconds").innerHTML = sec;
-    document.getElementById("hours").innerHTML = hrs;
 }
 
 //functions for increasing the time of the pomodoro
@@ -150,6 +152,7 @@ function increase60(){
     document.getElementById("minutes").innerHTML = min;    
 }
 
+/*------------------- Settings functions -------------------*/
 function showOptions3(){
     var settings = document.getElementById("settings-options");
     if(settings.style.display === 'none'){
@@ -159,6 +162,7 @@ function showOptions3(){
     }
 }
 
+//function for showing the background options
 function showBg(){
     var settingsParent = document.getElementById('settings-options');
     var settingsChild = document.getElementById("settings-bg");
@@ -170,6 +174,7 @@ function showBg(){
         settingsParent.style.display = "block";
     }
 }
+//functions for changing the background
 function setBg1(){
     var body = document.getElementsByTagName('body')[0];
     body.style.backgroundImage = 'url("background.jpg")';
@@ -178,14 +183,14 @@ function setBg2(){
     var body = document.getElementsByTagName('body')[0];
     body.style.backgroundImage = 'url("background2.jpg")';
 }
-
+// function for going back to the main settings section
 function returnSettings(){
     document.getElementById('settings-options').style.display = "block";
     document.getElementById("settings-bg").style.display = "none";
 }
 
 
-/*Information section functions*/
+// function for showing the information section
 function showInfo(){
     var info_Sec = document.getElementById("info-section");
     if(info_Sec.style.display ==="none"){
@@ -195,6 +200,7 @@ function showInfo(){
     }
 }
 
+//functions for the drop down boxes of the content in the info section
 function showInfoSec1(){
     var sec1 = document.getElementById("InfoSec1");
     if(sec1.style.display === "none"){
@@ -228,7 +234,7 @@ function showInfoSec4(){
     }
 }
 
-
+/* ------------------- Task list sections ---------------------- */
 //jQuery functions to toggle and untoggle the task menu 
 $("#menu-toggle").click(function (e) {
     e.preventDefault();
@@ -254,7 +260,7 @@ $("#menu-untoggle").click(function(e){
       }
   }
 
-
+// variables to be used for the AddTask() function
   var check_no = 0;
   var no_Tasks = 0;
   var finish_no_Tasks = 0;
@@ -270,8 +276,7 @@ $("#menu-untoggle").click(function(e){
       var text = document.createElement("label");
       text.className = "text-label";
       text.innerHTML = input;
-      //generating check element
-      /* Need to figure out how to dynamically create checkboxes properly */
+      //generating checkbox element
       var checkbox = document.createElement("input");
       checkbox.type="checkbox";
       checkbox.className="check";
@@ -280,13 +285,17 @@ $("#menu-untoggle").click(function(e){
       var checkmark = document.createElement('label');
       checkmark.htmlFor = checkbox.id;
       checkmark.className = "checkmark";
+      //function for when the checkbox is checked the number of finished tasks will change and the style of the box containing the task will change color 
       checkbox.onchange = function(){
+            // if the checkbox is checked
             if(checkbox.checked){
                 finish_no_Tasks +=1;
                 document.getElementById("Task_num1").innerHTML = finish_no_Tasks;
                 this.parentNode.style.background = "#F4F4F4";
                 this.parentNode.style.color = "rgba(0, 0, 0, 0.24)";
-            }else{
+            }
+            //when the checkbox is checked
+            else{
                 finish_no_Tasks -=1;
                 this.parentNode.style.background = "#FFFFFF";
                 this.parentNode.style.color = "#000000";
@@ -295,21 +304,23 @@ $("#menu-untoggle").click(function(e){
                 }
                 document.getElementById("Task_num1").innerHTML = finish_no_Tasks;
             }
-            
         }   
-      //delete button
+      //delete button being generated
       var btnRMV = document.createElement("span");
       btnRMV.setAttribute("class","far fa-trash-alt");
       //calling the removeTask() function when the button is clicked 
       var remove = document.createElement("button");
+      //function to be executed when the remove button is removed
       remove.onclick= function(){
           this.parentNode.parentNode.remove();
+          // decreasing the number of finish tasks and total tasks by -1 
           no_Tasks -= 1;
-          document.getElementById("Task_num2").innerHTML = no_Tasks;
           finish_no_Tasks -= 1;
+          //preventing values " < 0 " to be displayed
           if(finish_no_Tasks < 0){
-                finish_no_Tasks = 0;
-          }
+              finish_no_Tasks = 0;
+            }
+          document.getElementById("Task_num2").innerHTML = no_Tasks;
           document.getElementById("Task_num1").innerHTML = finish_no_Tasks ;
           
       }
@@ -328,6 +339,7 @@ $("#menu-untoggle").click(function(e){
           document.getElementById("list").appendChild(li);
       }
       document.getElementById("TaskInput").value=""; 
+      // adding  the number of tasks in total;
       no_Tasks += 1;
       document.getElementById("Task_num2").innerHTML = no_Tasks;
   }

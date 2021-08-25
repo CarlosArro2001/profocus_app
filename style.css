@@ -19,9 +19,21 @@ html,body{
     height:100%;
 }
 
+
 body{
+    animation:fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     background-image: url("background.jpg");
     background-size:cover;
+}
+@keyframes fadeInAnimation {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 #FocusPod_title{
@@ -588,4 +600,13 @@ input:checked + .slider:before {
 #footer{
     position:fixed;
     bottom:0;
+}
+#footer p{
+    font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  color: rgba(255, 255, 255, 0.38);
 }
