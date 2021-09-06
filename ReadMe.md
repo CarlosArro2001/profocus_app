@@ -27,7 +27,7 @@ As well as also building our skills such as:
 
 <a name="access"></a>
 ## 2. How to access the project/application
-TODO : write access
+To access the project, you can click [here](https://focuspod.herokuapp.com/) to enter the site.
 
 <a name="usage"></a>
 ## 3. How to use the project/application

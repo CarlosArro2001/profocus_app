@@ -1,22 +1,32 @@
 /*
     Author : Carlos Raniel Ariate Arro 
 
-    Last Update Date & Time : Tuesday,August 25 2021  7:40pm
+    Last Update Date & Time : Monday, September 6 2021  10:29pm
 
 */
 
 
-// variable that will contain the sound the user chooses
-var sound = check_sound;
+
 
 // preset values for the timer function template
 var min = 25;
 var sec = "00";
+var hrs = 0;
 //executed when the website is loaded the body will call the template() function via onload event
   function template() {
+    document.getElementById("hours").innerHTML = "00";
     document.getElementById("minutes").innerHTML = min;
     document.getElementById("seconds").innerHTML = sec;  
     document.getElementById("timer_title").innerHTML = "Ready to grind?";
+
+    //asking the user if they need help with using and navigating throughout the site
+    // through the use of a custom alert that will ask : "Need help around the site?"
+    // with options "yes" or "no".
+    let showGuide = confirm("Do you want a guide for using the site?");
+    if(showGuide){
+        document.getElementById('info-section').style.display = "block";
+    }
+    
   }
 
 /* -------------------Post timer sound functions ------------------------------------------*/
@@ -24,9 +34,10 @@ var sec = "00";
 //variables containing the audio files from the sounds folder
 var check_sound = new Audio("sounds/check.mp3");
 var SlowMorning_Sound = new Audio("sounds/SlowMorning.mp3");
-var Daybreak_Sound = new Audio("sounds/DayBreak.mp3");
+var Daybreak_Sound = new Audio("sounds/Daybreak.mp3");
 var EarlyRiser_Sound = new Audio("sounds/EarlyRiser.mp3");
-
+// variable that will contain the sound the user chooses
+var sound = "";
 //functions for playing and setting the sounds 
 function showOptions2(){
     var timer_options = document.getElementById("timer-options");
@@ -41,28 +52,93 @@ function showOptions2(){
         sound_options.style.display = "block";
     }
 }
-// functions for setting the sounds 
-function checkSound(){
-    sound = check_sound;
-    console.log(sound);
-    sound.play();
+
+function set_Sound(soundChoice){
+    sound = soundChoice;
+    alert(String(soundChoice));
 }
-function DaybreakSound(){
-    sound = Daybreak_Sound;
-    console.log(sound);
-    sound.play();
-}
-function SlowMorningSound(){
-    sound = SlowMorning_Sound;
-    console.log(sound);
-    sound.play();
-}
-function EarlyRiserSound(){
-    sound = EarlyRiser_Sound;
-    console.log(sound);
+// function for setting the sounds
+function playSound(sound){
+    if(sound === check_sound){
+        if(Daybreak_Sound.duration > 0 && !Daybreak_Sound.paused){
+            Daybreak_Sound.pause();
+            Daybreak_Sound.currentTime = 0;
+        }
+        if(EarlyRiser_Sound.duration > 0 && !EarlyRiser_Sound.paused){
+            EarlyRiser_Sound.pause();
+            EarlyRiser_Sound.currentTime = 0;
+        }
+        if(SlowMorning_Sound.duration > 0 && !SlowMorning_Sound.paused){
+            SlowMorning_Sound.pause();
+            SlowMorning_Sound.currentTime = 0;
+        }
+    }
+    if(sound === Daybreak_Sound){
+        if(check_sound.duration > 0 && !check_sound.paused){
+            check_sound.pause();
+            check_sound.currentTime = 0;
+        }
+        if(EarlyRiser_Sound.duration > 0 && !EarlyRiser_Sound.paused){
+            EarlyRiser_Sound.pause();
+            EarlyRiser_Sound.currentTime = 0;
+        }
+        if(SlowMorning_Sound.duration > 0 && !SlowMorning_Sound.paused){
+            SlowMorning_Sound.pause();
+            SlowMorning_Sound.currentTime = 0
+        }
+    }
+    if(sound === EarlyRiser_Sound){
+        if(check_sound.duration > 0 && !check_sound.paused){
+            check_sound.pause();
+            check_sound.currentTime = 0;
+        }
+        if(Daybreak_Sound.duration > 0 && !Daybreak_Sound.paused){
+            Daybreak_Sound.pause();
+            Daybreak_Sound.currentTime = 0;
+        }
+        if(SlowMorning_Sound.duration > 0 && !SlowMorning_Sound.paused){
+            SlowMorning_Sound.pause();
+            SlowMorning_Sound.currentTime = 0;
+
+        }
+    }
+    if(sound === SlowMorning_Sound){
+        if(check_sound.duration > 0 && !check_sound.paused){
+            check_sound.pause();
+            check_sound.currentTime = 0;
+        }
+        if(Daybreak_Sound.duration > 0 && !Daybreak_Sound.paused){
+            Daybreak_Sound.pause();
+            Daybreak_Sound.currentTime = 0;
+        }
+        if(EarlyRiser_Sound.duration > 0 && !EarlyRiser_Sound.paused){
+            EarlyRiser_Sound.pause();
+            EarlyRiser_Sound.currentTime = 0;
+
+        }
+    }
     sound.play();
 }
 
+function rmvSound(){
+    if(check_sound.duration > 0 && !check_sound.paused){
+        check_sound.pause();
+        check_sound.currentTime = 0;
+    }
+    if(Daybreak_Sound.duration > 0 && !Daybreak_Sound.paused){
+        Daybreak_Sound.pause();
+        Daybreak_Sound.currentTime = 0;
+    }
+    if(EarlyRiser_Sound.duration > 0 && !EarlyRiser_Sound.paused){
+        EarlyRiser_Sound.pause();
+        EarlyRiser_Sound.currentTime = 0;
+    }
+    if(SlowMorning_Sound.duration > 0 && !SlowMorning_Sound.paused){
+        SlowMorning_Sound.pause();
+        SlowMorning_Sound.currentTime = 0;
+    }
+    sound = "";
+}
 /* -----------------------------------------------Timer functions -------------------------------*/
 //executed when the timer button (center) is clicked on
 function showOptions(){
@@ -99,8 +175,8 @@ function start(){
     function secondsTimer(){
         sec = sec - 1;
         document.getElementById("seconds").innerHTML = sec;
-        if(sec <= 0){
-            if(min <= 0){
+        if(sec <= 57){
+            if(min <= 24){
                 clearInterval(minutes_interval);
                 clearInterval(seconds_interval);
                 document.getElementById("timer_title").innerHTML = finished_quotes[Math.floor(Math.random()*finished_quotes.length)];    
@@ -120,36 +196,77 @@ function start(){
 function clearTimer(){
     clearInterval(minutes_interval);
     clearInterval(seconds_interval);
-    min = 25;
+    min = 0;
     sec = "00";
-    document.getElementById("minutes").innerHTML = min;
+    hrs = 0;
+    document.getElementById("hours").innerHTML = "00";
+    document.getElementById("minutes").innerHTML = "00";
     document.getElementById("seconds").innerHTML = sec;
 }
 
 //functions for increasing the time of the pomodoro
 function increase1(){
     min += 1;
-    document.getElementById("minutes").innerHTML = min;    
+    if(min > 59){
+        hrs += 1;
+        min = 0;
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("hours").innerHTML = hrs;
+    }else{
+        document.getElementById("minutes").innerHTML = min;    
+    }
 }
 function increase5(){
     min += 5;
-    document.getElementById("minutes").innerHTML = min;    
+    if(min > 59){
+        hrs += 1;
+        min = 0;
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("hours").innerHTML = hrs;
+    }else{
+        document.getElementById("minutes").innerHTML = min;    
+    }
 }
 function increase10(){
     min += 10;
-    document.getElementById("minutes").innerHTML = min;    
+    if(min > 59){
+        hrs += 1;
+        min = 0;
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("hours").innerHTML = hrs;
+    }else{
+        document.getElementById("minutes").innerHTML = min;    
+    }  
 }
 function increase15(){
     min += 15;
-    document.getElementById("minutes").innerHTML = min;    
+    if(min > 59){
+        hrs += 1;
+        min = 0;
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("hours").innerHTML = hrs;
+    }else{
+        document.getElementById("minutes").innerHTML = min;    
+    } 
 }
 function increase30(){
     min += 30;
-    document.getElementById("minutes").innerHTML = min;    
+    if(min > 59){
+        hrs += 1;
+        min = 0;
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("hours").innerHTML = hrs;
+    }else{
+        document.getElementById("minutes").innerHTML = min;    
+    } 
 }
 function increase60(){
-    min += 60;
-    document.getElementById("minutes").innerHTML = min;    
+    hrs += 1
+    if(String(hrs).length === 1){
+        document.getElementById("hours").innerHTML = "0" + hrs;
+    }else{
+        document.getElementById("hours").innerHTML = hrs;    
+    }
 }
 
 /*------------------- Settings functions -------------------*/
@@ -184,7 +301,7 @@ function setBg2(){
     body.style.backgroundImage = 'url("background2.jpg")';
 }
 // function for going back to the main settings section
-function returnSettings(){
+function returnSettings1(){
     document.getElementById('settings-options').style.display = "block";
     document.getElementById("settings-bg").style.display = "none";
 }
@@ -233,6 +350,7 @@ function showInfoSec4(){
         sec4.style.display ="none";
     }
 }
+
 
 /* ------------------- Task list sections ---------------------- */
 //jQuery functions to toggle and untoggle the task menu 

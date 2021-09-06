@@ -14,6 +14,9 @@ lower half of the screen when the window gets resized - fixed
 
 */
 
+html{
+  filter: brightness(85%);
+}
 html,body{
     margin:0;
     height:100%;
@@ -44,7 +47,7 @@ body{
 
 /* Timer section*/
 #timer_Section{
-  margin-top: 60px;
+  margin-top: 20px;
   max-width: 100%;
 }
 .timer{
@@ -164,9 +167,24 @@ body{
   border-radius: 15rem;
   transition: 0.3s ease;
 }
+#rmvSound{
+  font-family: 'Lato',sans-serif;
+  border:none;
+  background-color: white;
+  border-radius: 15rem;
+}
+
+#rmvSound:hover{
+  background-color: #545454;
+  color:#FF3257;
+}
+
 .sound-btn:hover{
   background-color: #545454;
   color:#FF3257;
+}
+#sound-row-3{
+  margin-top: 5px;
 }
 
 /* timer options section */
@@ -309,6 +327,7 @@ input:checked + .slider:before {
 
 /* settings-options */
 #settings-options{
+  margin-top:5px;
   display:none;
   text-align: center !important;
 }
@@ -363,6 +382,8 @@ input:checked + .slider:before {
   background-color: #545454;
   color:#FF3257;
 }
+
+
 
 /* Task List section  */
 #sidebar-wrapper {

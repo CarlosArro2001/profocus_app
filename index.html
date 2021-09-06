@@ -93,6 +93,8 @@
                             <div class="timer-inner">
                                 <!-- Where the timer text will be displayed-->
                                 <div class="timer-text">
+                                    <h4 id="hours"></h4>
+                                    <h4>:</h4>
                                     <h4 id="minutes"></h4>
                                     <h4>:</h4>
                                     <h4 id="seconds"></h4>
@@ -114,29 +116,38 @@
                       <!-- Timer buttons section-->
                   <div id="sound-options">
                     <div class="container">
-                      <div class="row justify-content-center">
+                      <div class="row justify-content-center" id="sound-row-1">
                         <div class="col-md-auto" id="title-sound-options">
                           <p> Press the play button to preview and set the sound when the timer</p>
                         </div>
                       </div>
-                      <div class="row justify-content-center">
+                      <div class="row justify-content-center" id="sound-row-2">
                         <div class="sound-section col-md-auto">
                           <p>Check sound</p>
-                          <button class="sound-btn" id="check-btn"  onClick="checkSound()"><i class="far fa-play-circle fa-2x"></i></button>
+                          <button class="sound-btn" id="check-btn"  onClick="playSound(check_sound)"><i class="far fa-play-circle fa-2x"></i></button>
+                          <button onClick ="set_Sound(check_sound)"> Set sound</button>
                         </div>
                         <div class="sound-section col-md-auto">
                           <p>SlowMorning sound</p>
-                          <button class="sound-btn" id="SlowMorning-btn" onClick="SlowMorningSound()"><i class="far fa-play-circle fa-2x"></i></button>
+                          <button class="sound-btn" id="SlowMorning-btn" onClick="playSound(SlowMorning_Sound)"><i class="far fa-play-circle fa-2x"></i></button>
+                          <button onClick ="set_Sound(SlowMorning_Sound)"> Set sound</button>
                         </div>
                         <div class="sound-section col-md-auto">
                           <p>Daybreak sound</p>
-                          <button class="sound-btn" id="Daybreak-btn" onClick="DaybreakSound()"><i class="far fa-play-circle fa-2x"></i></button>
+                          <button class="sound-btn" id="Daybreak-btn" onClick="playSound(Daybreak_Sound)"><i class="far fa-play-circle fa-2x"></i></button>
+                          <button onClick ="set_Sound(Daybreak_Sound)"> Set sound</button>
                         </div>
                         <div class="sound-section col-md-auto">
                           <p>EarlyRiser sound</p>
-                          <button class="sound-btn" id="EarlyRiser-btn" onClick="EarlyRiserSound()"><i class="far fa-play-circle fa-2x"></i></button>
+                          <button class="sound-btn" id="EarlyRiser-btn" onClick="playSound(EarlyRiser_Sound)"><i class="far fa-play-circle fa-2x"></i></button>
+                          <button onClick ="set_Sound(EarlyRiser_Sound)"> Set sound</button>
                         </div>
-                    </div>
+                      </div>
+                      <div class="row justify-content-center" id="sound-row-3">
+                        <div class="col-md-auto">
+                          <button onClick="rmvSound()" id="rmvSound">Disable Sounds</button>
+                        </div>
+                      </div>
                   </div>
                 </div>
                   <!-- Timer options -->
@@ -204,14 +215,14 @@
                         <button class="bg-btn" onclick="setBg1()">Set background 1</button>
                       </div>
                       <div class="col-md-auto">
-                        <button id="return-btn" onclick="returnSettings()"><i class="fas fa-undo"></i></button>
+                        <button id="return-btn" onclick="returnSettings1()"><i class="fas fa-undo"></i></button>
                       </div>
                       <div class="col-md-auto">
                         <button class="bg-btn"onclick="setBg2()">Set background 2</button>
                       </div>
                     </div>
                   </div>
-                </div>                
+                </div>             
               </div>
               <div class="col-5" id="info-section">
                 <div class="container-fluid">
