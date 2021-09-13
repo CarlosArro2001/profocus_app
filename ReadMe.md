@@ -5,8 +5,8 @@
 1. [ Description of the project ](#desc)
 2. [ How to access the project/application ](#access)
 3. [ How to use the project/application ](#usage)
-4. [ Credits ](#credits)
-
+4. [ Known Bugs ](#bugs)
+5. [ Credits ](#credits)
 <a name="desc"></a>
 ## 1. Description of the project
 FocusPod is a simple productivity app that consists of two main features:
@@ -33,8 +33,15 @@ To access the project, you can click [here](https://focuspod.herokuapp.com/) to 
 ## 3. How to use the project/application
 TODO : Write Usage
 
+<a name="bugs"></a>
+## 4. Known Bugs
+- [] Unable to use "enter" to submit task
+- [] Unable to drag and rearranged tasks
+- [] box sizes are incorrect
+- [] +/- icon for adding a new task incorrect 
+- [] Timer finishes after closing the timer buttons when it is not supposed to closed.
 <a name="credits"></a>
-## 4. Credits 
+## 5. Credits 
 Credit go for the followiong individuals included in the development of the project (not real names, just discord usernames):
 * Lemonsu 
 * Carlos. ;)
