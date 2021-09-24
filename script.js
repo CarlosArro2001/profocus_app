@@ -169,7 +169,7 @@ function start(){
     seconds_interval = setInterval(secondsTimer,1000);
     document.getElementById("timer_title").innerHTML = start_quotes[Math.floor(Math.random()*start_quotes.length)];
     function minutesTimer(){
-        min-min-1;
+        min=min-1;
         document.getElementById("minutes").innerHTML = min;
     }
     function secondsTimer(){
